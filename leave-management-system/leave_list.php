@@ -1,65 +1,48 @@
 <?php
+use MongoDB\BSON\ObjectId;
+
 require_once __DIR__ . '/config/db.php';
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-$leaves = $db->leaves;
-$user_leaves = $leaves->find(['user_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])]);
+$leaveRequests = $db->leave_requests;
+$requests = $leaveRequests->find(['user_id' => new ObjectId($_SESSION['user_id'])]);
 
 include __DIR__ . '/includes/header.php';
 ?>
 
-<h2>Your Leave Requests</h2>
-<table>
-    <tr>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Reason</th>
-        <th>Status</th>
-    </tr>
-    <?php foreach ($user_leaves as $leave): ?>
-    <tr>
-        <td><?php echo $leave['start_date']->toDateTime()->format('Y-m-d'); ?></td>
-        <td><?php echo $leave['end_date']->toDateTime()->format('Y-m-d'); ?></td>
-        <td><?php echo htmlspecialchars($leave['reason']); ?></td>
-        <td><?php echo htmlspecialchars($leave['status']); ?></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
+<h2>Your Leave History</h2>
 
-<?php include __DIR__ . '/includes/footer.php'; ?><?php
-require_once __DIR__ . '/config/db.php';
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
-
-$leaves = $db->leaves;
-$user_leaves = $leaves->find(['user_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])]);
-
-include __DIR__ . '/includes/header.php';
-?>
-
-<h2>Your Leave Requests</h2>
-<table>
-    <tr>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Reason</th>
-        <th>Status</th>
-    </tr>
-    <?php foreach ($user_leaves as $leave): ?>
-    <tr>
-        <td><?php echo $leave['start_date']->toDateTime()->format('Y-m-d'); ?></td>
-        <td><?php echo $leave['end_date']->toDateTime()->format('Y-m-d'); ?></td>
-        <td><?php echo htmlspecialchars($leave['reason']); ?></td>
-        <td><?php echo htmlspecialchars($leave['status']); ?></td>
-    </tr>
-    <?php endforeach; ?>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Requested At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($requests as $request): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($request['leave_type']); ?></td>
+                <td><?php echo htmlspecialchars($request['start_date']); ?></td>
+                <td><?php echo htmlspecialchars($request['end_date']); ?></td>
+                <td><?php echo htmlspecialchars($request['reason'] ?? ''); ?></td>
+                <td><?php echo htmlspecialchars(ucfirst($request['status'])); ?></td>
+                <td><?php echo htmlspecialchars($request['requested_at']->toDateTime()->format('Y-m-d H:i:s')); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
 </table>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

@@ -1,13 +1,17 @@
 <?php
 require_once __DIR__ . '/config/db.php';
 
+use MongoDB\BSON\ObjectId;
+
+session_start();
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
 $users = $db->users;
-$user = $users->findOne(['_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])]);
+$user = $users->findOne(['_id' => new ObjectId($_SESSION['user_id'])]);
 
 include __DIR__ . '/includes/header.php';
 ?>

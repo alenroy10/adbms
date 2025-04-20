@@ -1,6 +1,6 @@
-    </main>
+</main>
     <footer>
-        <p>&copy; 2023 Leave Management System</p>
+        <p>&copy; 2025 Leave Management System</p>
     </footer>
 </body>
 </html>
