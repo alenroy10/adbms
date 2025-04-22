@@ -1,0 +1,60 @@
+/* 
+* variables.css
+* Contains all color variables and theme constants used throughout the application
+*/
+
+:root {
+  /* Main colors */
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --primary-light: #eef1ff;
+  --secondary: #4cc9f0;
+  --success: #2ec4b6;
+  --danger: #ef476f;
+  --warning: #ffd166;
+  --info: #4cc9f0;
+  --light: #f8f9fa;
+  --dark: #212529;
+  
+  /* Grays */
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  
+  /* Status colors */
+  --status-pending-bg: #fff3cd;
+  --status-pending-text: #856404;
+  --status-approved-bg: #d4edda;
+  --status-approved-text: #155724;
+  --status-rejected-bg: #f8d7da;
+  --status-rejected-text: #721c24;
+  
+  /* Fonts */
+  --font-family-sans-serif: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Shadows */
+  --shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  --shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .175);
+  
+  /* Transitions */
+  --transition-base: all .2s ease-in-out;
+  --transition-fade: opacity .15s linear;
+  
+  /* Spacings */
+  --spacer: 1rem;
+  
+  /* Border radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 1rem;
+  --border-radius-pill: 50rem;
+} 

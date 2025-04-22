@@ -1,0 +1,137 @@
+/* 
+* theme.css
+* Contains theme-specific styles and customizations
+*/
+
+/* Login/Signup form */
+.auth-form-container {
+  max-width: 480px;
+  margin: 2rem auto;
+}
+
+.auth-form-container .card {
+  border-top: 5px solid var(--primary);
+}
+
+.auth-form-heading {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-form-subheading {
+  color: var(--gray-600);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Dashboard customizations */
+.welcome-card {
+  background-color: var(--primary-light);
+  border-left: 5px solid var(--primary);
+}
+
+.welcome-card .card-title {
+  color: var(--primary);
+}
+
+/* Admin dashboard customizations */
+.admin-card {
+  background: linear-gradient(135deg, var(--primary-light) 0%, white 100%);
+  border-left: 5px solid var(--primary);
+}
+
+.admin-card .card-title {
+  color: var(--primary-dark);
+}
+
+/* Leave Request Form */
+.leave-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Leave Status Tags */
+.status-approved {
+  border-left: 4px solid var(--success);
+}
+
+.status-pending {
+  border-left: 4px solid var(--warning);
+}
+
+.status-rejected {
+  border-left: 4px solid var(--danger);
+}
+
+/* Custom page header with subtle gradient background */
+.page-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.page-header h1, .page-header h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.page-header p {
+  color: var(--gray-600);
+  margin-bottom: 0;
+}
+
+/* Homepage customizations */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, white 100%);
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+}
+
+.hero-title {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  color: var(--gray-700);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.feature-description {
+  color: var(--gray-600);
+}
+
+/* Animations */
+.animate-slide-up {
+  animation: slide-up 0.5s ease forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 

@@ -1,0 +1,159 @@
+/* 
+* base.css
+* Contains base styles and overrides for the Bootstrap framework
+*/
+
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--gray-800);
+  background-color: var(--gray-100);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--gray-900);
+}
+
+h1, .h1 { font-size: 2.25rem; }
+h2, .h2 { font-size: 1.8rem; }
+h3, .h3 { font-size: 1.5rem; }
+h4, .h4 { font-size: 1.25rem; }
+h5, .h5 { font-size: 1.1rem; }
+h6, .h6 { font-size: 1rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Bootstrap overrides */
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition-base);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-success {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-outline-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--danger);
+  color: white;
+}
+
+.table {
+  --bs-table-striped-bg: var(--gray-100);
+  --bs-table-hover-bg: var(--primary-light);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--gray-700);
+}
+
+/* Custom utility classes */
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-muted {
+  color: var(--gray-600) !important;
+}
+
+.shadow-hover {
+  transition: var(--transition-base);
+}
+
+.shadow-hover:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* Status badges */
+.badge-pending {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+}
+
+.badge-approved {
+  background-color: var(--status-approved-bg);
+  color: var(--status-approved-text);
+}
+
+.badge-rejected {
+  background-color: var(--status-rejected-bg);
+  color: var(--status-rejected-text);
+} 

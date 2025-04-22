@@ -1,0 +1,172 @@
+/* 
+* components.css
+* Contains custom component styles used throughout the application
+*/
+
+/* Card enhancements */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  background-color: white;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  background-color: white;
+  border-top: 1px solid var(--gray-200);
+  padding: 1.25rem 1.5rem;
+}
+
+/* Custom navbar */
+.navbar {
+  padding: 0.75rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--gray-900);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--gray-700);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.nav-link.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--border-radius-pill);
+}
+
+.status-pending {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+}
+
+.status-approved {
+  background-color: var(--status-approved-bg);
+  color: var(--status-approved-text);
+}
+
+.status-rejected {
+  background-color: var(--status-rejected-bg);
+  color: var(--status-rejected-text);
+}
+
+/* Stats cards */
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.stats-card-title {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.stats-card-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.stats-card-description {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+/* Alert styles */
+.alert {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.alert-success {
+  background-color: var(--status-approved-bg);
+  color: var(--status-approved-text);
+  border-left: 4px solid var(--success);
+}
+
+.alert-warning {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+  border-left: 4px solid var(--warning);
+}
+
+.alert-danger {
+  background-color: var(--status-rejected-bg);
+  color: var(--status-rejected-text);
+  border-left: 4px solid var(--danger);
+}
+
+/* Footer */
+.footer {
+  background-color: white;
+  padding: 2rem 0;
+  border-top: 1px solid var(--gray-200);
+  color: var(--gray-600);
+}
+
+.footer a {
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.footer a:hover {
+  color: var(--primary);
+  text-decoration: none;
+} 
